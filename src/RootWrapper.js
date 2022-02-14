@@ -7,6 +7,7 @@ import {
   Route,
 } from 'react-router-dom';
 import { store } from './app/store';
+import { Web3Provider } from './features/web3Api';
 
 export default function RootWrapper () {
 
@@ -22,7 +23,9 @@ export default function RootWrapper () {
 
   return (
     <Provider store={store}>
-      {rootRouter}
+      <Web3Provider>
+        {rootRouter}
+      </Web3Provider>
     </Provider>
   );
 }
